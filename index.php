@@ -1,8 +1,5 @@
 <?php
-/**
- * Student Management System - Main Page (Read Operation)
- * Enhanced with search, sorting, and better UI
- */
+
 
 require_once 'config.php';
 
