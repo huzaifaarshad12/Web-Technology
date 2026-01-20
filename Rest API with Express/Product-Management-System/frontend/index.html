@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Product Management System</h1>
+    
+    <!-- Notification Area -->
+    <div id="notification" class="notification"></div>
+    
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search products..." aria-label="Search products">
+      <select id="categoryFilter" aria-label="Filter by category">
+        <option value="">All Categories</option>
+      </select>
+      <button id="addBtn">Add New Product</button>
+    </div>
+    
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading">Loading...</div>
+
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <h2 id="modalTitle">Add Product</h2>
+      <form id="productForm">
+        <input type="hidden" id="productId">
+        <input type="text" id="name" placeholder="Product Name" required>
+        <textarea id="description" placeholder="Description"></textarea>
+        <input type="number" step="0.01" id="price" placeholder="Price" required min="0">
+        <select id="category" required aria-label="Product category">
+          <option value="">Select Category</option>
+        </select>
+        <input type="number" id="stock" placeholder="Stock Quantity" value="0" min="0" required>
+        <button type="submit" id="submitBtn">Save Product</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

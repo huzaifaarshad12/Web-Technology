@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h1>Product Management</h1>
+    
+    <!-- Search and Filter -->
+    <input type="text" id="search" placeholder="Search by name or description">
+    <select id="categoryFilter">
+        <option value="">All Categories</option>
+    </select>
+    <select id="sort">
+        <option value="name asc">Name ASC</option>
+        <option value="name desc">Name DESC</option>
+        <option value="price asc">Price ASC</option>
+        <option value="price desc">Price DESC</option>
+    </select>
+    <button id="addProductBtn">Add Product</button>
+    
+    <!-- Product Table -->
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+    <!-- Pagination -->
+    <div id="pagination"></div>
+    
+    <!-- Modal for Add/Edit -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add Product</h2>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <label>Name: <input type="text" id="name" required></label>
+                <label>Description: <textarea id="description"></textarea></label>
+                <label>Price: <input type="number" id="price" step="0.01" required></label>
+                <label>Category: 
+                    <select id="category">
+                        <option value="">None</option>
+                    </select>
+                </label>
+                <label>Stock: <input type="number" id="stock_quantity" value="0"></label>
+                <button type="submit">Save</button>
+            </form>
+            <div id="formError"></div>
+        </div>
+    </div>
+    
+    <div id="loading">Loading...</div>
+    <div id="error"></div>
+</body>
+</html>
